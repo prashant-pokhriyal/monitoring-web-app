@@ -1,24 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { CardBGColor, CardProps } from './components/card/type';
+import Cards from './components/cards/Cards';
 
 function App() {
+  let [cards, setCards] = useState<Array<CardProps>>([]);
+  let [isLoading, setLoading] = useState(false);
+  let [shouldReload, setShouldReload] = useState(new Date());
+
+  const handleClick = () => {
+    setShouldReload(new Date());
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(async () => {
+      const newCards = [
+        {
+          desc: 'Card 1',
+          bgColor: CardBGColor.BLUE,
+        },
+        {
+          desc: 'Card 2',
+          bgColor: CardBGColor.YELLOW,
+        },
+        {
+          desc: 'Card 3',
+          bgColor: CardBGColor.RED,
+        },
+      ];
+
+      setCards(newCards);
+      setLoading(false);
+      console.log('useEffect with setTimeout has been called after 3 seconds');
+    }, 3000);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button type="button" onClick={handleClick}>
+        Reload
+      </button>
+      {isLoading && <div className="loader"></div>}
+      {!isLoading && <Cards cards={cards} />}
     </div>
   );
 }

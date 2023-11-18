@@ -1,0 +1,4 @@
+.cards-root {
+    display: flex;
+    gap: 4px;
+}
