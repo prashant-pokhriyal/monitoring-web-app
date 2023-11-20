@@ -1,0 +1,142 @@
+.self-checkout-card-root {
+  width: 170px;
+  border-radius: 0;
+
+  &.non-sale {
+    .self-checkout-icon-root {
+      color: #232528;
+      background-color: #232528;
+    }
+
+    .self-checkout-register-id-root {
+      background-color: #3c3e4a;
+    }
+  }
+
+  &.idle {
+    .self-checkout-icon-root {
+      color: #2e78cd;
+      background-color: #2e78cd;
+    }
+
+    .self-checkout-register-id-root {
+      background-color: #6caaf1;
+    }
+  }
+
+  &.sale-plus-help {
+    .self-checkout-icon-root {
+      color: #4a8062;
+      background-color: #4a8062;
+    }
+    .self-checkout-register-id-root {
+      background-color: #ea994e;
+    }
+  }
+
+  &.sale {
+    .self-checkout-icon-root {
+      color: #4a8062;
+      background-color: #4a8062;
+    }
+    .self-checkout-register-id-root {
+      background-color: #83a491;
+    }
+  }
+
+  // .payment-processing {
+  //   .self-checkout-icon-root {
+  //     background-color: ;
+  //   }
+  //   .self-checkout-register-id-root {
+  //     background-color: ;
+  //   }
+  // }
+
+  // .payment-failure {
+  //   .self-checkout-icon-root {
+  //     background-color: ;
+  //   }
+  //   .self-checkout-register-id-root {
+  //     background-color: ;
+  //   }
+  // }
+
+  &.help-request {
+    .self-checkout-icon-root {
+      color: #e76f00;
+      background-color: #e76f00;
+    }
+    .self-checkout-register-id-root {
+      background-color: #ea994e;
+    }
+  }
+  // .attend {
+  //   .self-checkout-icon-root {
+  //     background-color: ;
+  //   }
+  //   .self-checkout-register-id-root {
+  //     background-color: ;
+  //   }
+  // }
+  // .offline {
+  //   .self-checkout-icon-root {
+  //     background-color: ;
+  //   }
+  //   .self-checkout-register-id-root {
+  //     background-color: ;
+  //   }
+  // }
+  // .cashier-login {
+  //   .self-checkout-icon-root {
+  //     background-color: ;
+  //   }
+  //   .self-checkout-register-id-root {
+  //     background-color: ;
+  //   }
+  // }
+  // .transaction-suspended {
+  //   .self-checkout-icon-root {
+  //     background-color: ;
+  //   }
+  //   .self-checkout-register-id-root {
+  //     background-color: ;
+  //   }
+  // }
+
+  // .non-sales-light {
+  //   background-color: #3c3e4a;
+  // }
+
+  // .non-sales-dark {
+  //   background-color: #232528;
+  // }
+
+  // .customer-check-in-light {
+  //   background-color: #83a491;
+  // }
+
+  // .customer-check-in-dark {
+  //   background-color: #4a8062;
+  // }
+
+  // .sales {
+  //   background-color: #ea994e;
+  // }
+
+  // .sales-dark {
+  //   background-color: #e76f00;
+  // }
+
+  .self-checkout-card-icon {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    right: 9px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border: 1px solid #000;
+  }
+}

@@ -1,50 +1,25 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import { CardBGColor, CardProps } from './components/card/type';
-import Cards from './components/cards/Cards';
+import { SelfCheckoutCard } from './components/self-checkout-card';
+import { SelfCheckoutCardState } from './components/self-checkout-card/type';
 
-function App() {
-  let [cards, setCards] = useState<Array<CardProps>>([]);
-  let [isLoading, setLoading] = useState(false);
-  let [shouldReload, setShouldReload] = useState(new Date());
-
-  const handleClick = () => {
-    setShouldReload(new Date());
-  };
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(async () => {
-      const newCards = [
-        {
-          desc: 'Card 1',
-          bgColor: CardBGColor.BLUE,
-        },
-        {
-          desc: 'Card 2',
-          bgColor: CardBGColor.YELLOW,
-        },
-        {
-          desc: 'Card 3',
-          bgColor: CardBGColor.RED,
-        },
-      ];
-
-      setCards(newCards);
-      setLoading(false);
-      console.log('useEffect with setTimeout has been called after 3 seconds');
-    }, 3000);
-  }, []);
-
+const App = () => {
   return (
-    <div className="App">
-      <button type="button" onClick={handleClick}>
-        Reload
-      </button>
-      {isLoading && <div className="loader"></div>}
-      {!isLoading && <Cards cards={cards} />}
+    <div className="App d-flex flex-direction-row gap-1">
+      <SelfCheckoutCard
+        state={SelfCheckoutCardState.NON_SALE}
+        registerId={171}
+      />
+      <SelfCheckoutCard
+        state={SelfCheckoutCardState.SALE_PLUS_HELP}
+        registerId={172}
+      />
+      <SelfCheckoutCard
+        state={SelfCheckoutCardState.HELP_REQUEST}
+        registerId={173}
+      />
+      <SelfCheckoutCard state={SelfCheckoutCardState.IDLE} registerId={174} />
+      <SelfCheckoutCard state={SelfCheckoutCardState.SALE} registerId={174} />
     </div>
   );
-}
+};
 
 export default App;
