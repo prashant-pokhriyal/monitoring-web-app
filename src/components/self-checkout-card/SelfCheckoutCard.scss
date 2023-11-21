@@ -129,6 +129,9 @@
   // }
 
   .self-checkout-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     border-radius: 50%;
     position: absolute;
@@ -138,5 +141,9 @@
     height: 24px;
     text-align: center;
     border: 1px solid #000;
+
+    svg {
+      font-size: 14px;
+    }
   }
 }

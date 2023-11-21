@@ -1,5 +1,3 @@
-import { ReactSVG } from 'react-svg';
-import { ReactComponent as Icon } from './kiosk.svg';
 import './SelfCheckoutIcon.scss';
 
 const SVGIcon = (props: React.SVGProps<SVGSVGElement>) => (

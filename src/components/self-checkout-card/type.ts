@@ -15,4 +15,5 @@ export enum SelfCheckoutCardState {
 export interface SelfCheckoutCardProps {
   registerId: number;
   state: SelfCheckoutCardState;
+  onClick?: () => void;
 }
